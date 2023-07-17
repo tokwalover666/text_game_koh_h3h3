@@ -5,6 +5,8 @@ using TMPro;
 
 public class TextGame_Manager : MonoBehaviour
 {
+    public int HPValue, STAMINAValue;
+    public TextMeshProUGUI HPTextValue, STAMINATextValue;
     public GameObject startscreen, block1, block2, block3, block4, block5, block6, block7, block8, block9, 
         block10, block11, block12, block13, block14, block15, block16, block17, block18, block19, block20, block21, 
         block22, block23, block24, block25, block26, block27, block28, block29, block30, block31, block32, block33, 
@@ -14,13 +16,15 @@ public class TextGame_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HPValue = 100;
+        STAMINAValue = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HPTextValue.text = HPValue.ToString();
+        STAMINATextValue.text = STAMINAValue.ToString();
     }
     public void startbutton()
     {
@@ -39,6 +43,7 @@ public class TextGame_Manager : MonoBehaviour
     {
         block2.SetActive(false);
         block16.SetActive(true);
+        STAMINAValue -= 10;
     }
 
     public void block2choices2()
@@ -58,6 +63,7 @@ public class TextGame_Manager : MonoBehaviour
     {
         block3.SetActive(false);
         block4.SetActive(true);
+        STAMINAValue -= 20;
     }
 
     //block4
@@ -79,12 +85,14 @@ public class TextGame_Manager : MonoBehaviour
     {
         block6.SetActive(false);
         block7.SetActive(true);
+        STAMINAValue -= 20;
     }
     //killed a person ENDING
     public void block6choices2()
     {
         block6.SetActive(false);
         ENDING1.SetActive(true);
+
     }
 
     //block7
@@ -102,10 +110,12 @@ public class TextGame_Manager : MonoBehaviour
     }
 
     //block9
+    //got lost ENDING
     public void block9choices1()
     {
         block9.SetActive(false);
         ENDING2.SetActive(true);
+
     }
 
     //block10
@@ -126,13 +136,17 @@ public class TextGame_Manager : MonoBehaviour
     {
         block11.SetActive(false);
         block12.SetActive(true);
+        HPValue = 0;
+        STAMINAValue = 0;
     }
 
     //block12
+    //got killed ENDING
     public void block12choices1()
     {
         block12.SetActive(false);
         ENDING3.SetActive(true);
+
     }
 
     //block13
@@ -152,12 +166,14 @@ public class TextGame_Manager : MonoBehaviour
     {
         block13.SetActive(false);
         block14.SetActive(true);
+        STAMINAValue -= 10;
     }
 
     public void block13choices3()
     {
         block13.SetActive(false);
         block5.SetActive(true);
+        STAMINAValue -= 20;
     }
 
     //block14
@@ -165,13 +181,17 @@ public class TextGame_Manager : MonoBehaviour
     {
         block14.SetActive(false);
         block15.SetActive(true);
+
     }
 
     //block15
+    //got killed ENDING
     public void block15choices1()
     {
         block15.SetActive(false);
         ENDING3.SetActive(true);
+        HPValue = 0;
+        STAMINAValue = 0;
     }
 
     //block16
@@ -310,12 +330,14 @@ public class TextGame_Manager : MonoBehaviour
     {
         block33.SetActive(false);
         block35.SetActive(true);
+
     } 
 
     public void block33choices2()
     {
         block33.SetActive(false);
         block34.SetActive(true);
+        STAMINAValue -= 20;
     }
 
     //block34
@@ -323,6 +345,7 @@ public class TextGame_Manager : MonoBehaviour
     {
         block34.SetActive(false);
         block7.SetActive(true);
+        STAMINAValue -= 20;
     }
 
     //block35
